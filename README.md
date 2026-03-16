@@ -5,7 +5,9 @@ As a Physics and Computer Science undergrad, I've always felt that standard Mach
 This project is my deep dive into Physics-Informed Neural Networks (PINNs). Instead of training an AI on thousands of pre-calculated simulations, I built a continuous neural network that learns to simulate the diffusion of heat across a 2D metal plate entirely from scratch, guided only by the laws of thermodynamics and PyTorch's automatic differentiation engine.
 
 ## The Core Concept: Math Over Data
-Traditional neural networks map discrete data points. This network is designed to act as a continuous mathematical function mapping spatial coordinates $(x, y)$ and time $t$ to a temperature $u$.To do this, the network must obey the 2D Heat Equation (a Partial Differential Equation):$$\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right)$$Instead of a standard Mean Squared Error against a dataset, I engineered a custom loss function that heavily penalises the AI if its predictions break this mathematical law.
+Traditional neural networks map discrete data points. This network is designed to act as a continuous mathematical function mapping spatial coordinates $(x, y)$ and time $t$ to a temperature $u$.To do this, the network must obey the 2D Heat Equation (a Partial Differential Equation):
+$$\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right)$$
+Instead of a standard Mean Squared Error against a dataset, I engineered a custom loss function that heavily penalises the AI if its predictions break this mathematical law.
 
 ## Software Architecture & Engineering
 I didn't want to just write a messy, linear Jupyter Notebook. I wanted to build a robust, modular, and testable piece of software.
