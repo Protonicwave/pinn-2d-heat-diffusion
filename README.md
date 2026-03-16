@@ -6,6 +6,7 @@ This project is my deep dive into Physics-Informed Neural Networks (PINNs). Inst
 
 ## The Core Concept: Math Over Data
 Traditional neural networks map discrete data points. This network is designed to act as a continuous mathematical function mapping spatial coordinates $(x, y)$ and time $t$ to a temperature $u$.To do this, the network must obey the 2D Heat Equation (a Partial Differential Equation):
+
 $$\frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} \right)$$
 
 Instead of a standard Mean Squared Error against a dataset, I engineered a custom loss function that heavily penalises the AI if its predictions break this mathematical law.
